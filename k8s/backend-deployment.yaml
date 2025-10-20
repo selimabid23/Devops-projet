@@ -24,9 +24,15 @@ spec:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://mysql:3306/TPProjet
             - name: SPRING_DATASOURCE_USERNAME
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-user
             - name: SPRING_DATASOURCE_PASSWORD
-              value: ""
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-password
             - name: SERVER_PORT
               value: "8089"
             - name: SERVER_SERVLET_CONTEXT_PATH
