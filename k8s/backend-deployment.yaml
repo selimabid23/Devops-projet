@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: selimabid605/backend:v1
+          image: selimabid605/backend:V1
           imagePullPolicy: Always
           ports:
             - containerPort: 8089
